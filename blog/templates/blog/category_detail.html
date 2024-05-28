@@ -11,7 +11,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>ددلاین</h1>
+                        <h1>دسته بندی: {{ category.title }}</h1>
                         {% comment %} <span class="subheading">A Blog Theme by Start Bootstrap</span> {% endcomment %}
                     </div>
                 </div>
@@ -22,7 +22,7 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                {% for article in articles %}
+                {% for article in category.articles.get_published_articles %}
                     <!-- Post preview-->
                     <div class="post-preview">
                         <a href="{% url "blog:article" article.slug %}">
@@ -36,7 +36,7 @@
                         </p>
                         <p>
                             {% for category in article.get_published_category.all %}
-                                <a class="post-preview__category" href="{% url "blog:category_detail" category.slug %}">#{{category.title}}</a>
+                                <a class="post-preview__category" href="#">#{{category}}</a>
                             {% endfor %}
                         </p>
                     </div>

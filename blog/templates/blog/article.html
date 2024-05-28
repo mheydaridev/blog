@@ -16,7 +16,7 @@
                         <span class="meta">
                             نوشته شده توسط
                             <a href="#!">مهدی حیدری</a>
-                            در {{article.publish}}
+                            در {{article.get_jalali_publish}}
                         </span>
                     </div>
                 </div>
@@ -29,14 +29,8 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     {{article.description|linebreaks}}
-                    {% comment %} <p>
-                        Placeholder text by
-                        <a href="http://spaceipsum.com/">Space Ipsum</a>
-                        &middot; Images by
-                        <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
-                    </p> {% endcomment %}
                 </div>
             </div>
         </div>
     </article>
-{% endblock %}        
+{% endblock %}

@@ -10,6 +10,13 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@font-face {
+  font-family: "Sahel";
+  src: url("../assets/fonts/Sahel-FD-WOL.ttf") format('truetype'),
+      url("../assets/fonts/Sahel-FD-WOL.eot") format('opentype'),
+      url("../assets/fonts/Sahel-FD-WOL.woff") format('woff'),
+      url("../assets/fonts/Sahel-FD-WOL.woff2") format('woff2');
+}
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

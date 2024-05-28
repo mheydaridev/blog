@@ -11,7 +11,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>ددلاین</h1>
+                        <h1>دسته بندی ها</h1>
                         {% comment %} <span class="subheading">A Blog Theme by Start Bootstrap</span> {% endcomment %}
                     </div>
                 </div>
@@ -22,30 +22,20 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                {% for article in articles %}
+                {% for category in categories %}
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="{% url "blog:article" article.slug %}">
-                            <h2 class="post-title">{{article.title}}</h2>
-                            <h3 class="post-subtitle">{{article.description|truncatewords:30}}</h3>
+                        <a href="{% url "blog:category_detail" category.slug %}">
+                            <h2 class="post-title">{{category.title}}</h2>
+                            {% comment %} <h3 class="post-subtitle">{{category.description}}</h3> {% endcomment %}
                         </a>
-                        <p class="post-meta">
-                            نوشته شده توسط
-                            <a href="#!">مهدی حیدری</a>
-                            در {{article.get_jalali_publish}}
-                        </p>
-                        <p>
-                            {% for category in article.get_published_category.all %}
-                                <a class="post-preview__category" href="{% url "blog:category_detail" category.slug %}">#{{category.title}}</a>
-                            {% endfor %}
-                        </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                 {% endfor %}
                 <!-- Pager-->
                 <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">
-                    پست های قدیمی تر 
+                    دسته بندی های دیگر 
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-6" width='14px'>
                         <path fill-rule="evenodd" d="M7.28 7.72a.75.75 0 0 1 0 1.06l-2.47 2.47H21a.75.75 0 0 1 0 1.5H4.81l2.47 2.47a.75.75 0 1 1-1.06 1.06l-3.75-3.75a.75.75 0 0 1 0-1.06l3.75-3.75a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
                     </svg>                      
